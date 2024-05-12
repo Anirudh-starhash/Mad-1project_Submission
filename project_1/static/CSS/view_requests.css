@@ -1,0 +1,117 @@
+.left, .right {
+    float: left;
+    width: 20%; /* The width is 20%, by default */
+  }
+  
+  .main {
+    float: left;
+    width: 60%; /* The width is 60%, by default */
+  }
+  
+  /* Use a media query to add a breakpoint at 800px: */
+  @media screen and (max-width: 800px) {
+    .left, .main, .right {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
+.row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.requested,.granted{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 0 0 15px gainsboro;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 100%;
+    background-color: cornflowerblue;
+}
+body{
+    text-align: center;
+  display:flex;
+  justify-content : center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100%;
+  background-image: url('../images/user_dash.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+.row4{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+h3{
+    color: black;
+    text-align: center;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: 10px;
+}  
+.head{
+  color: white;
+}
+.row3{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 15px gainsboro;
+    background-color: aliceblue;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    padding:20px;
+    width:100%;
+} 
+p{
+    color: blue;
+    font-size: 18px;
+}
+.back{
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+#back1{
+  background-color: aqua;
+  width:160px;
+  height:30px;
+}
+#back1:hover{
+  background-color: aliceblue;
+  transform: translate(2px);
+}
+span{
+    color: black;
+}
+#add2{
+    width:160px;
+    height: 40px;
+    color: blue;
+    background-color: aqua;
+    font-weight: bold;
+    border-color: blue;
+}
+#add2:hover{
+    transform: translate(2px);
+    background-color: aliceblue;
+}
+table,th,td{
+  border-color: blue;
+}
+table{
+  border-collapse: collapse;
+}

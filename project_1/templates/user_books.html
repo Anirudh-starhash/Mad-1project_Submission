@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>Welcome to Books Page</h1>
+        <p>{{message}}</p>
+        <div class="back">
+            <a href="/user_dashboard/{{id}}"><button id="back1">Dashboard</button></a>
+        </div>
+    </div>
+    <div class="row2">
+        {% for x in book %}
+        <div class="row">
+            <h1 id="label">{{x["title"]}}</h1>
+            <p><span>Author Fname : </span>{{x["auth_fname"]}}</p>
+            <p><span>Author Lname : </span>{{x["auth_lname"]}}</p>
+            <p><span>Publisher : </span>{{x["publisher"]}}</p>
+            <p><span>Posted On : </span>{{x["year"]}}</p>
+            <p><span>ISBN_NO : </span> {{x["ISBN_no"]}} </p>
+            <div class="buttons">
+                <a href="/request/{{id}}/{{x["ISBN_no"]}}">
+                    <button id="add2" onclick="myfunction()">
+                        Ask for Issuing
+                    </button>
+                </a>
+                <a href="/view_feedback/{{id}}/{{x["ISBN_no"]}}">
+                    <button id="add2">
+                        View Reviews
+                    </button>
+                </a>
+               
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <style>
+        .left, .right {
+            float: left;
+            width: 20%; 
+        }
+  
+        .main {
+           float: left;
+           width: 60%; 
+        } 
+        #label{
+            font-size: 20px;
+        }
+        /* Use a media query to add a breakpoint at 800px: */
+        @media screen and (max-width: 800px) {
+           .left, .main, .right {
+           width: 100%; 
+           }
+        } 
+
+
+        .jumbotron{
+           text-align: center;
+           color: gainsboro;
+        }
+        .row{
+           box-sizing: border-box;
+           box-shadow: 0 0 15px gainsboro;
+           display:flex;
+           justify-content : center;
+           gap:0.2px;
+           align-items: center;
+           flex-direction: column;
+           background-color: aliceblue;
+           border-radius: 50px;
+           cursor: pointer;
+           padding: 20px;
+        }
+        body{
+            text-align: center;
+            background-color: cornflowerblue;
+        }
+        span{
+            color: blue;
+        }
+        .row2{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .add{
+            margin-top: 300px;
+        }
+        #add{ 
+            width: 70px; 
+            height: 70px; 
+            padding: 10px 16px; 
+            border-radius: 35px; 
+            font-size: 30px; 
+            text-align: center; 
+        }
+        #add:hover{
+            transform: translate(2px);
+            background-color: blue;
+            color: white;
+        } 
+        .buttons{
+            display: flex;
+            justify-content: space-around;
+        }
+        p{
+            text-align: center;
+            color: blue;
+        }
+        #add2{
+            width:160px;
+            height: 40px;
+            color: blue;
+            background-color: aqua;
+            font-weight: bold;
+            border-color: blue;
+        }
+        #add2:hover{
+            transform: translate(2px);
+            background-color: aliceblue;
+        }
+        .buttons{
+            display: flex;
+            justify-content: space-around;
+        }
+        .back{
+            display:flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+          }
+          #back1{
+            background-color: aqua;
+            width:160px;
+            height:30px;
+          }
+          #back1:hover{
+            background-color: aliceblue;
+            transform: translate(2px);
+          }
+    </style>
+    <script>
+        function myfunction() {
+            alert("Book request has been sent wait for updates");
+        };
+    </script>
+</body>
+</html>

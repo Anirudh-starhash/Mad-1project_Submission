@@ -1,0 +1,65 @@
+.left, .right {
+    float: left;
+    width: 20%; /* The width is 20%, by default */
+  }
+  
+  .main {
+    float: left;
+    width: 60%; /* The width is 60%, by default */
+  }
+  
+  /* Use a media query to add a breakpoint at 800px: */
+  @media screen and (max-width: 800px) {
+    .left, .main, .right {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
+
+  .delete{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  h2{
+    color: white;
+  }
+  body{
+    background: whitesmoke;
+    display:flex;
+    justify-content : center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100%;
+    background-image: url('../images/section.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .row2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .buttons{
+    display: flex;
+    justify-content: center;
+  }
+  #add2{
+    background-color: aqua;
+    color: blue;
+    width: 160px;
+    height: 30px;
+  }
+  #add2:hover{
+    transform: translate(2px);
+    background-color: aliceblue;
+  }

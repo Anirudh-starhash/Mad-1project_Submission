@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeedBack Page</title>
+</head>
+<body>
+    <div class="feedback">
+        <div class="tag">
+            <h2>Welcome to Reviews Page of the book {{title}}</h2>
+        </div>
+        <div class="row">
+            {% for x in feedback %}
+            <div class="row2">
+                <p><span>ISBN_no = </span>{{x}}</p>
+                {% for y in range(feedback[x] |length ) %}
+                <div class="row3">
+                    <p><span>user_id = </span>{{feedback[x][y]["user_id"]}}</p>
+                    <p><span>Feedback = </span>{{feedback[x][y]["feedback"]}}</p>
+                    <p><span>Rating = </span>{{feedback[x][y]["rating"]}}/5</p>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+        <div class="home">
+            <a href="/user_dashboard/{{id}}/books"><button id="add2">Home</button></a>
+        </div>
+    </div>
+    <style>
+        .feedback{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap:40px;
+        }
+        h2{
+            color: white;
+        }
+        body{
+            text-align: center;
+            display:flex;
+            justify-content : center;
+
+            min-height: 100vh;
+            min-width: 100%;
+            background-color: cornflowerblue;
+        }
+        .row2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .row3,.row{
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            box-shadow: 0 0 15px gainsboro;
+            background-color: aliceblue;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 20px;
+            padding:20px;
+            width:100%;
+        }
+        .home{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #add2{
+             background-color: aqua;
+             width:160px;
+             height: 30px;
+             color: blue;
+        }
+        #add2:hover{
+            background-color: aliceblue;
+            transform: translate(2px);
+        }
+        span{
+            color: blue;
+        }
+    </style>
+</body>
+</html>

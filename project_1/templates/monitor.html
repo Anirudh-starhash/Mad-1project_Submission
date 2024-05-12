@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='CSS/monitor.css')}}">
+</head>
+<body>
+    <div class="row">
+        <div>
+            <h1>Hey {{id}} this is the page where you monitor all users who are linked with you</h1>
+          </div>
+      
+          <div class="row2">
+              <table class="row3" border="box" bordercolor=" dark black">
+                  <tr>
+                      <div class="row4">
+                          <th><span>User Id</span></th>
+                          <th colspan="2">User Name</th>
+                          <th>User Email</th>
+                          <th>Issued Books</th>
+                          <th>Requested Books</th>
+                          <th>Returned Books</th>
+                      </div>
+                     
+                  </tr>
+      
+                  {% for x in tracker %}
+                  <tr>
+                      <td><span>{{x}}</span></td>
+                      <td colspan="2">
+                          {{tracker[x]["user_fname"]}}
+                          {{tracker[x]["user_lname"]}}
+                      </td>
+                      <td><span>{{tracker[x]["user_email"]}}</span></td>
+                      <td><span>{{tracker[x]["issued_books"]}}</span></td>
+                      <td><span>{{tracker[x]["requested_books"]}}</span></td>
+                      <td><span>{{tracker[x]["returned_books"]}}</span></td>
+                  </tr>
+                  {% endfor %}
+      
+              </table>
+          </div>
+          <div class="buttons">
+              <a href="/librarian_dashboard/{{id}}"><button id="add2">Home</button></a>
+          </div>
+    </div>
+    
+</body>
+</html>

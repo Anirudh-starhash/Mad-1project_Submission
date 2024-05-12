@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>Welcome to Books Page</h1>
+    </div>
+    <div class="buttons">
+        <a href="/section_page/{{id}}/{{sid}}"><button id="add2">Home</button></a>
+    </div>
+    <div class="add">
+        <a href="/add_book/{{id}}/{{sid}}"><button id="add">+</button></a>
+    </div>
+    <div class="row2">
+        <div class="row">
+            <h1 id="label">{{book[0].title}}</h1>
+            <p><span>Author Fname : </span>{{book[0].auth_fname}}</p>
+            <p><span>Author Lname : </span>{{book[0].auth_lname}}</p>
+            <p><span>Publisher : </span>{{book[0].publisher}}</p>
+            <p><span>Posted On : </span>{{book[0].date}}</p>
+            <p><span>ISBN_NO : </span> {{book[0].ISBN_no}} </p>
+            <div class="buttons">
+                <a href="/edit_book/{{id}}/{{book[0].ISBN_no}}"><button id="add2">Edit Book</button></a>
+            </div>
+    </div>
+    <style>
+        .left, .right {
+            float: left;
+            width: 20%; 
+        }
+  
+        .main {
+           float: left;
+           width: 60%; 
+        } 
+  
+        /* Use a media query to add a breakpoint at 800px: */
+        @media screen and (max-width: 800px) {
+           .left, .main, .right {
+           width: 100%; 
+           }
+        } 
+        .jumbotron{
+           text-align: center;
+           color: gainsboro;
+        }
+        #label{
+            font-size: 20px;
+        }
+        .add{
+            margin-top: 20px;
+        }
+        .row{
+           box-sizing: border-box;
+           box-shadow: 0 0 15px gainsboro;
+           display:flex;
+           justify-content : center;
+           align-items: center;
+           flex-direction: column;
+           background-color: aliceblue;
+           border-radius: 50px;
+           cursor: pointer;
+           padding: 20px;
+        }
+        body{
+            text-align: center;
+            background-color: cornflowerblue;
+        }
+        span{
+            color: blue;
+        }
+        .row2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+        }
+        #add{ 
+            width: 70px; 
+            height: 70px; 
+            padding: 10px 16px; 
+            border-radius: 35px; 
+            font-size: 30px; 
+            text-align: center; 
+        }
+        #add:hover{
+            transform: translate(2px);
+            background-color: blue;
+            color: white;
+        } 
+        .buttons{
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        #add2{
+            width:160px;
+            height: 30px;
+            color: blue;
+            background-color: aqua;
+            font-weight: bold;
+            border-color: blue;
+        }
+        #add2:hover{
+            transform: translate(2px);
+            background-color: aliceblue;
+        }
+    </style>
+    <script>
+        function myfunction() {
+            alert("Book request has been sent wait for updates");
+        };
+    </script>
+</body>
+</html>

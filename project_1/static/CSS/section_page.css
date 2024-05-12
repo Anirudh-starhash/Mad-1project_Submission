@@ -1,0 +1,105 @@
+.left, .right {
+    float: left;
+    width: 20%; /* The width is 20%, by default */
+  }
+  
+  .main {
+    float: left;
+    width: 60%; /* The width is 60%, by default */
+  }
+  
+  /* Use a media query to add a breakpoint at 800px: */
+  @media screen and (max-width: 800px) {
+    .left, .main, .right {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
+
+h1{
+  color: white;
+}
+.jumbotron:hover{
+  color: red;
+}
+.row3{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.row{
+    box-sizing: border-box;
+    box-shadow: 0 0 15px gainsboro;
+    display:flex;
+    justify-content : space-around;
+    align-items: center;
+    flex-direction: column;
+    background-color: aliceblue;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 20px;
+}
+body{
+  text-align: center;
+  display:flex;
+  justify-content : center;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100%;
+  background-image: url('../images/user_dash.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#book2{
+  margin-left: 100px;
+  margin-top: 5px;
+
+}
+#book2,#book{
+  width:100px;
+  color: blue;
+  background-color: aqua;
+  font-weight: bold;
+  border-color: blue;
+  height:50px;
+}
+#book2:hover,#book:hover{
+  transform: translate(2px);
+  background-color: aliceblue;
+}
+#move{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+span{
+  color: blue;
+}
+.row2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.buttons{
+  display: flex;
+  justify-content: center;
+
+}
+.add{
+  margin-top: 300px;
+}
+#add{ 
+  width: 70px; 
+  height: 70px; 
+  padding: 10px 16px; 
+  border-radius: 35px; 
+  font-size: 30px; 
+  text-align: center; 
+}
+#add:hover{
+  transform: translate(2px);
+  background-color: blue;
+  color: white;
+} 

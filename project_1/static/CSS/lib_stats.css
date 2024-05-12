@@ -1,0 +1,151 @@
+.left, .right {
+    float: left;
+    width: 20%; /* The width is 20%, by default */
+  }
+  
+  .main {
+    float: left;
+    width: 60%; /* The width is 60%, by default */
+  }
+  
+  /* Use a media query to add a breakpoint at 800px: */
+  @media screen and (max-width: 800px) {
+    .left, .main, .right {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
+
+
+.jumbotron{
+    margin-bottom: 300px;
+    background-color: gainsboro;
+    width: auto;
+}
+p{
+    text-align: center;
+    font-size: 15px;
+    color: blue;
+}
+#name{
+    color: black;
+    font-weight: bold;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+#name:hover{
+    color: blue;
+}
+.components{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+#book{
+    margin-right: 60px;
+    width: 100px;
+    color: blue;
+    background-color: aqua;
+    font-weight: bold;
+    border-color: blue;
+}
+#book2{
+    margin-right:60px;
+    width: 100px;
+    color: blue;
+    background-color: aqua;
+    font-weight: bold;
+    border-color: blue;
+}
+#log{
+    width: 100px;
+    color: blue;
+    background-color: aqua;
+    font-weight: bold;
+    border-color: blue;
+}
+#stats2{
+    width:100px;
+    color: blue;
+    background-color: aqua;
+    font-weight: bold;
+    border-color: blue;
+}
+#s{
+    width:200px;
+    color: blue;
+    background-color: aqua;
+    font-weight: bold;
+    border-color: blue;
+    margin-left:100px;
+}
+#book:hover{
+    transform: translate(2px);
+    background-color: aliceblue;
+}
+#book2:hover{
+    transform: translate(2px);
+    background-color: aliceblue;
+}
+#log:hover,#s:hover{
+    transform: translate(2px);
+    background-color: aliceblue;
+}
+#stats2:hover{
+    transform: translate(2px);
+    background-color: aliceblue;
+}
+.row{
+    box-sizing: border-box;
+    box-shadow: 0 0 15px gainsboro;
+    width: 100%;
+    height: 600px;
+    display:flex;
+    justify-content : center;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-bottom: 200px;
+}
+.img{
+    margin-bottom: 300px;
+}
+body{
+    background: whitesmoke;
+    display:flex;  
+    justify-content : center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100%;
+    background-image: url('../images/lib_login2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#requests{
+    width:100px;
+    color: blue;
+    background-color:aqua;
+    font-weight: bold;
+    border-color: blue;
+}
+#requests:hover{
+    color: aliceblue;
+    transform: translate(2px);
+}
+.add{
+    margin-left:450px;
+    margin-top: 200px;
+}
+#add{ 
+    width: 70px; 
+    height: 70px; 
+    padding: 10px 16px; 
+    border-radius: 35px; 
+    font-size: 30px; 
+    text-align: center; 
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ask_review</title>
+</head>
+<body>
+    <div class="feedback">
+        <div class="Tag">
+            <h2>Welcome to a page where you can give review regarding the book {{isbn}}</h2>
+        </div>
+        <div class="value">
+            <form action="/return_book/{{id}}/{{isbn}}" method="post">
+                <div class="feed">
+                    <label for="feed">review</label>
+                    <input type="text" name="feed" id="feed">
+                </div>
+                 <div class="ra">
+                    <label for="rat">Rating</label>
+                    <input type="number" value="0" min="0" max="5" id="rat" name="rat">
+                 </div>
+                
+                <div class="buttons">
+                    <button type="Submit" id="add2">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="cancel">
+            <a href="/return_book/{{id}}/{{isbn}}">
+                <button id="add2">Cancel</button>
+            </a>
+        </div>
+    </div>
+    <style>
+        .feedback{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+        #feed{
+            height: 60px;
+            width: 200px;
+        }
+        h2{
+            color: white;
+        }
+        .buttons{
+            display: flex;
+            margin-top: 50px;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            background-color: cornflowerblue;
+            min-height: 100vh;
+            min-width: 100%;
+        }
+        .ra{
+            margin-top: 50px;
+        }
+        .value{
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-shadow: 0 0 15px gainsboro;
+            background-color: aliceblue;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 20px;
+            padding:20px;
+            width:100%;
+        }
+        .cancel{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #add2{
+             background-color: aqua;
+             width:160px;
+             height: 30px;
+             color: blue;
+        }
+        #add2:hover{
+            background-color: aliceblue;
+            transform: translate(2px);
+        }
+    </style>
+</body>
+</html>

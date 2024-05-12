@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="D:/iitm/diploma/project_1/testdb.sqlite3" readonly="0" foreign_keys="" case_sensitive_like="" temp_store="" wal_autocheckpoint="" synchronous=""/><attached/><window><main_tabs open="browser structure pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="150"/><column_width id="3" width="2296"/><column_width id="4" width="0"/></tab_structure><tab_browse><current_table name="0,0:"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">
+
+create table user(
+   user_fname varchar(20),
+   user_lname varchar(20),
+   user_email varchar(50),
+   password varchar(20),
+   primary key (user_email)
+);
+
+create table book_issue(
+   accession_no varchar(20),
+   user_email varchar(50),
+   doi date,
+   foreign key (accession_no) REFERENCES book_copies(accession_no),
+   foreign key (user_email) REFERENCES user(user_email),
+   primary key (accession_no,user_email)
+);
+
+create table keeps_rarck_of(
+   librarian_email varchar(50),
+   user_email varchar(50),
+   foreign key (user_email) REFERENCES user(user_email),
+   foreign key (librarian_email) REFERENCES librarian(librarian_email),
+   primary key (user_email,librarian_email)
+);
+</sql><current_tab id="0"/></tab_sql></sqlb_project>

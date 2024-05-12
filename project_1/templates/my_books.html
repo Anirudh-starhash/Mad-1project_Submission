@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Books</title>
+    <link rel="stylesheet" href="../static/CSS/my_books.css">
+</head>
+<body>
+    <div class="row">
+        <div class="back">
+            <a href="/user_dashboard/{{id}}"><button id="back1">Home</button>
+            </a>
+        </div>
+        <div class="issued">
+            <div class="tag">
+                <h2>Issued Books</h2>
+            </div>
+            <div class="row2">
+                <table class="row3" border="box" bordercolor=" dark black">
+                    <tr>
+                        <div class="row4">
+                            <th><h3>ISBN_NO</h3></th>
+                            <th><h3>Title</h3></th>
+                            <th> <h3>Author Fname</h3></th>
+                            <th> <h3>Author Lname</h3></th>
+                            <th> <h3>Publisher</h3></th>
+                            <th> <h3>Posted On</h3></th>
+                            <th> <h3>Issued On</h3></th>
+                            <th> <h3>Due Date On</h3></th>
+                            <th><h3>Action</h3></th>
+                        </div>
+                    </tr>
+                    {% for x in issued %}
+                    <tr>
+                        <td><p>{{x}}</p></td>
+                        <td><p>{{issued[x]["title"]}}</p></td>
+                        <td><p>{{issued[x]["auth_fname"]}}</p></td>
+                        <td><p>{{issued[x]["auth_lname"]}}</p></td>
+                        <td><p>{{issued[x]["publisher"]}}</p></td>
+                        <td><p>{{issued[x]["date"]}}</p></td>
+                        <td><p>{{issued[x]["issue_date"]}}</p></td>
+                        <td><p>{{issued[x]["due_date"]}}</p></td>
+                        <td>
+                            <a href="/ask_feedback/{{id}}/{{x}}">
+                                <button id="add2">Return Book</button>
+                            </a>
+                            
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+               
+            </div>
+            
+        </div>
+        <div class="returned">
+            <div class="tag">
+                <h2>Returned Books</h2>
+            </div>
+            <div class="row2">
+                <table class="row3" border="box" bordercolor=" dark black">
+                    <tr>
+                        <div class="row4">
+                            <th><h3>ISBN_NO</h3></th>
+                            <th><h3>Title</h3></th>
+                            <th> <h3>Author Fname</h3></th>
+                            <th> <h3>Author Lname</h3></th>
+                            <th> <h3>Publisher</h3></th>
+                            <th> <h3>Posted On</h3></th>
+                            <th> <h3>Returned On</h3></th>
+                            <th><h3>Action</h3></th>
+                        </div>
+                    </tr>
+                    {% for x in returned %}
+                    <tr>
+                        <td><p>{{x}}</p></td>
+                        <td><p>{{returned[x]["title"]}}</p></td>
+                        <td><p>{{returned[x]["auth_fname"]}}</p></td>
+                        <td><p>{{returned[x]["auth_lname"]}}</p></td>
+                        <td><p>{{returned[x]["publisher"]}}</p></td>
+                        <td><p>{{returned[x]["date"]}}</p></td>
+                        <td><p>{{returned[x]["return_date"]}}</p></td>
+                        <td>
+                            <a href="/re_issue/{{id}}/{{x}}">
+                                <button id="add2">Re-Issue Book</button>
+                            </a>
+                           
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+               
+            </div>
+            
+        </div>
+        <div class="requested">
+            <div class="tag">
+                <h2>Requested Books</h2>
+            </div>
+            <div class="row2">
+                <table class="row3" border="box" bordercolor=" dark black">
+                    <tr>
+                        <div class="row4">
+                            <th><h3>ISBN_NO</h3></th>
+                            <th><h3>Title</h3></th>
+                            <th> <h3>Author Fname</h3></th>
+                            <th> <h3>Author Lname</h3></th>
+                            <th> <h3>Publisher</h3></th>
+                            <th> <h3>Posted On</h3></th>
+                            <th> <h3>Requested On</h3></th>
+                            <th><h3>Action</h3></th>
+                        </div>
+                    </tr>
+                    {% for x in requested %}
+                    <tr>
+                        <td><p>{{x}}</p></td>
+                        <td><p>{{requested[x]["title"]}}</p></td>
+                        <td><p>{{requested[x]["auth_fname"]}}</p></td>
+                        <td><p>{{requested[x]["auth_lname"]}}</p></td>
+                        <td><p>{{requested[x]["publisher"]}}</p></td>
+                        <td><p>{{requested[x]["date"]}}</p></td>
+                        <td><p>{{requested[x]["request_date"]}}</p></td>
+                        <td>
+                            <a href="/withdraw_request/{{id}}/{{x}}">
+                                <button id="add2">WithDraw Book</button>
+                            </a>
+                            
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+               
+            </div>
+           
+
+        </div>
+    </div>
+</body>
+</html>

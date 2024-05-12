@@ -1,0 +1,23 @@
+first go to app.py and run it 
+then you get
+
+""" 
+Starting local Development
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.29.240:5000
+Press CTRL+C to quit
+ * Restarting with stat
+Starting local Development
+ * Debugger is active!
+ * Debugger PIN: 137-103-805
+ ....
+
+"""
+
+
+click the url https://127.0.01:5000
+ or copy it and run it in chromne or micropsft edge

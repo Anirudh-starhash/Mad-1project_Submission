@@ -1,0 +1,503 @@
+openapi: 3.0.0
+info:
+  title: Open API Documentation
+  version: 1.0.0
+  description: >
+    Documentation example you can add various **documentation** here.It takes
+    both markdown and HTML
+
+    <p>
+       erDiagram
+    user ||--o{ book_catalogue : book_issue
+    librarian ||--o{ user : keeps_track_of
+    user }|..|{ section : analysis
+    librarian ||--o{ section : manage
+
+    user {
+        string user_id pk
+        string user_fname
+        string user_lname
+        string user_email
+        string password 
+    }
+    librarian{
+        string librarian_id pk
+        string librarian_email
+        string password
+    }
+
+    section{
+        string section_id pk
+        string title
+        string date
+        string description
+    }
+
+    book_catalogue{
+        string ISBN_no pk
+        string section_id fk
+        string title
+        string auth_fname
+        string auth_lname
+        string publisher
+        Integer no_of_pages
+    }
+
+    </p>
+
+    
+    <h2> Error codes </h2> <table>
+       <thead>
+              <th> Resource </th>
+              <th> Error Code </th>
+              <th> Message </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td> Resource </td>
+                <td> Error Code </td>
+                <td> Message </td>
+            </tr>
+        </tbody>
+    </table>
+
+servers:
+  - url: http://127.0.0.1:5000/
+paths:
+  /api/section_page/{lid}/{section_id}:
+    description: >-
+      End point to read, about a section
+    get:
+      description: operation to get section details
+      parameters:
+        - in: path
+          name: username
+          required: true
+          schema:
+            type: string
+            example: all
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: section object
+                type: object
+                properties:
+                  section_id:
+                    type: string
+                    example: SID001
+                  title:
+                    type: string
+                    example: DBMS
+                  date:
+                    type: string
+                    example: 02-11-2004
+                  description:
+                    type: string
+                    example: DBMS books are here
+        '400':
+          description: Bad Request
+          content:
+            applictaion/json:
+             schema:
+              type: object
+              properties:
+               error_code:
+                type: string
+               error_message:
+                type: string
+        '404':
+          description: Resource Not Found
+        '500':
+          description: Internal Server Error
+  /api/edit_section/{lid}/{section_id}:
+    description:
+       End point to edit a section
+    put:
+     description: operation to edit section details
+     parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+          example: all
+     responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              title: section object
+              type: object
+              properties:
+                 section_id:
+                    type: string
+                    example: SID001
+                  title:
+                    type: string
+                    example: DBMS
+                  date:
+                    type: string
+                    example: 02-11-2004
+                  description:
+                    type: string
+                    example: DBMS books are here
+      '400':
+          description: Bad Request
+          content:
+            applictaion/json:
+             schema:
+              type: object
+              properties:
+               error_code:
+                type: string
+               error_message:
+                type: string
+      '404':
+          description: Resource Not Found
+      '500':
+          description: Internal Server Error
+  /api/add_section/{lid}:
+    description:  End point to add section details
+    post:
+     description: operation to add section details
+     parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+          example: all
+     responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              title: user object
+              type: object
+              properties:
+                  section_id:
+                    type: string
+                    example: SID001
+                  title:
+                    type: string
+                    example: DBMS
+                  date:
+                    type: string
+                    example: 02-11-2004
+                  description:
+                    type: string
+                    example: DBMS books are here
+      '400':
+          description: Bad Request
+          content:
+            applictaion/json:
+             schema:
+              type: object
+              properties:
+               error_code:
+                type: string
+               error_message:
+                type: string
+      '404':
+          description: Resource Not Found
+      '500':
+          description: Internal Server Error
+  /api/delete_section/{lid}/{section_id}:
+    decription: End point to delete section details
+    delete:
+     description: operation to delete section details
+     parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+          example: all
+     responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              title: user object
+              type: object
+              properties:
+                  section_id:
+                    type: string
+                    example: SID001
+                  title:
+                    type: string
+                    example: DBMS
+                  date:
+                    type: string
+                    example: 02-11-2004
+                  description:
+                    type: string
+                    example: DBMS books are here
+      '400':
+          description: Bad Request
+          content:
+            applictaion/json:
+             schema:
+              type: object
+              properties:
+               error_code:
+                type: string
+               error_message:
+                type: string
+      '404':
+          description: Resource Not Found
+      '500':
+          description: Internal Server Error
+  /api/view_book/{lid}/{isbn}:
+    description: >-
+      End point to read, about a section
+    get:
+      description: operation to get section details
+      parameters:
+        - in: path
+          name: username
+          required: true
+          schema:
+            type: string
+            example: all
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                title: section object
+                type: object
+                properties:
+                  ISBN_no:
+                    type: string
+                    example: ISBN001
+                  section_id:
+                    type: string
+                    example: SID001
+                  title:
+                    type: string
+                    example: fundamentals of database
+                  year:
+                    type: string
+                    example: 02-11-2004
+                  publisher:
+                    type: string
+                    example: sai charan
+                  auth_fname:
+                    type: string
+                    example: anirudh
+                  auth_lname:
+                    type: string
+                    example: pabbaraju
+                  no_of_pages:
+                    type: Integer
+                    example: 546
+        '400':
+          description: Bad Request
+          content:
+            applictaion/json:
+             schema:
+              type: object
+              properties:
+               error_code:
+                type: string
+               error_message:
+                type: string
+        '404':
+          description: Resource Not Found
+        '500':
+          description: Internal Server Error
+  /api/edit_book/{lid}/{isbn}:
+    description:
+       End point to edit a section
+    put:
+     description: operation to edit section details
+     parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+          example: all
+     responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              title: section object
+              type: object
+              properties:
+                  ISBN_no:
+                    type: string
+                    example: ISBN001
+                  section_id:
+                    type: string
+                    example: SID001
+                  title:
+                    type: string
+                    example: fundamentals of database
+                  year:
+                    type: string
+                    example: 02-11-2004
+                  publisher:
+                    type: string
+                    example: sai charan
+                  auth_fname:
+                    type: string
+                    example: anirudh
+                  auth_lname:
+                    type: string
+                    example: pabbaraju
+                  no_of_pages:
+                    type: Integer
+                    example: 546
+      '400':
+          description: Bad Request
+          content:
+            applictaion/json:
+             schema:
+              type: object
+              properties:
+               error_code:
+                type: string
+               error_message:
+                type: string
+      '404':
+          description: Resource Not Found
+      '500':
+          description: Internal Server Error
+  /api/add_book/{lid}/{isbn}:
+    description:  End point to add section details
+    post:
+     description: operation to add section details
+     parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+          example: all
+     responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              title: user object
+              type: object
+              properties:
+                  ISBN_no:
+                    type: string
+                    example: ISBN001
+                  section_id:
+                    type: string
+                    example: SID001
+                  title:
+                    type: string
+                    example: fundamentals of database
+                  year:
+                    type: string
+                    example: 02-11-2004
+                  publisher:
+                    type: string
+                    example: sai charan
+                  auth_fname:
+                    type: string
+                    example: anirudh
+                  auth_lname:
+                    type: string
+                    example: pabbaraju
+                  no_of_pages:
+                    type: Integer
+                    example: 546
+      '400':
+          description: Bad Request
+          content:
+            applictaion/json:
+             schema:
+              type: object
+              properties:
+               error_code:
+                type: string
+               error_message:
+                type: string
+      '404':
+          description: Resource Not Found
+      '500':
+          description: Internal Server Error
+  /api/delete_book/{lid}:
+    decription: End point to delete section details
+    delete:
+     description: operation to delete section details
+     parameters:
+      - in: path
+        name: username
+        required: true
+        schema:
+          type: string
+          example: all
+     responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              title: user object
+              type: object
+              properties:
+                 ISBN_no:
+                    type: string
+                    example: ISBN001
+                  section_id:
+                    type: string
+                    example: SID001
+                  title:
+                    type: string
+                    example: fundamentals of database
+                  year:
+                    type: string
+                    example: 02-11-2004
+                  publisher:
+                    type: string
+                    example: sai charan
+                  auth_fname:
+                    type: string
+                    example: anirudh
+                  auth_lname:
+                    type: string
+                    example: pabbaraju
+                  no_of_pages:
+                    type: Integer
+                    example: 546
+      '400':
+          description: Bad Request
+          content:
+            applictaion/json:
+             schema:
+              type: object
+              properties:
+               error_code:
+                type: string
+               error_message:
+                type: string
+      '404':
+          description: Resource Not Found
+      '500':
+          description: Internal Server Error
+    
+    
+        
+        
+                          
+                    
+            
+              
+     

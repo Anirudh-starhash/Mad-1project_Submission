@@ -1,0 +1,95 @@
+.left, .right {
+    float: left;
+    width: 20%; /* The width is 20%, by default */
+  }
+  
+  .main {
+    float: left;
+    width: 60%; /* The width is 60%, by default */
+  }
+  
+  /* Use a media query to add a breakpoint at 800px: */
+  @media screen and (max-width: 800px) {
+    .left, .main, .right {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
+h1{
+  color: white;
+  text-align: center;
+  font-family: foglghten;
+  font-style: italic;
+  font-size: 40px;
+}
+p{
+  color:white;
+  font-family: foglghten;
+  font-size: 25px;
+}
+.center {
+  display: flex;
+  flex-direction: row;
+  gap:20px;
+}
+.image{
+  align-items: center;
+}
+.image{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:500px;
+  margin-top:150px;
+}
+.intro{
+  display: flex;
+  flex-direction: column;
+  width:70%;
+}
+.text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.row{
+  font-size: 20px;
+  color:blue;
+  height:100%;
+  margin-top:50px;
+}
+body {
+  background-image: url('../images/library2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+span{
+    color: white;
+    font-size: 30px;
+}
+.navig{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 10px;
+}
+img{
+  transform: scale(1.6);
+}
+#b1{
+  width:150px;
+  height: 50px;
+  color: black;
+  font-weight: bold;
+  border-color: white;
+  background-color: cornsilk;
+  box-sizing: border-box;
+  border-radius: 2px;
+  box-shadow: 5px 5px 5px lightblue;
+  margin-top: 100px;
+}
+#b1:hover{
+  transform: translate(2px);
+  background-color: aliceblue;
+ 
+}
+  

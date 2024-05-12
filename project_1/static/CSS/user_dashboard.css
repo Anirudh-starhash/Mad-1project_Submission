@@ -1,0 +1,125 @@
+.left, .right {
+    float: left;
+    width: 20%; /* The width is 20%, by default */
+  }
+  
+  .main {
+    float: left;
+    width: 60%; /* The width is 60%, by default */
+  }
+  
+  /* Use a media query to add a breakpoint at 800px: */
+  @media screen and (max-width: 800px) {
+    .left, .main, .right {
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
+
+body{
+    background: whitesmoke;
+    display:flex;
+    justify-content : center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100%;
+    background-image: url('../images/user_dash.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.jumbotron{
+    margin-bottom: 300px;
+    background-color: gainsboro;
+    width: auto;
+}
+p{
+    text-align: center;
+    font-size: 15px;
+    color: blue;
+}
+#name{
+    color: black;
+    font-weight: bold;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+#name:hover{
+    color: blue;
+}
+.components{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#book{
+    margin-right: 60px;
+    width: 100px;
+    color: blue;
+    background-color: aqua;
+    font-weight: bold;
+    border-color: blue;
+}
+#book2{
+    margin-right:60px;
+    width: 100px;
+    color: blue;
+    background-color: aqua;
+    font-weight: bold;
+    border-color: blue;
+}
+#log{
+    margin-left: 50px;
+    width: 100px;
+    color: blue;
+    background-color: aqua;
+    font-weight: bold;
+    border-color: blue;
+}
+#stats2{
+    width:100px;
+    color: blue;
+    background-color: aqua;
+    font-weight: bold;
+    border-color: blue;
+}
+#s{
+    width:200px;
+    color: blue;
+    background-color: aqua;
+    font-weight: bold;
+    border-color: blue;
+    margin-left:100px;
+}
+#book:hover{
+    transform: translate(2px);
+    background-color: aliceblue;
+}
+#book2:hover{
+    transform: translate(2px);
+    background-color: aliceblue;
+}
+#log:hover,#s:hover{
+    transform: translate(2px);
+    background-color: aliceblue;
+}
+#stats2:hover{
+    transform: translate(2px);
+    background-color: aliceblue;
+}
+#search_select{
+    margin-bottom: 20px;
+    width: 200px;
+}
+#sear{
+    margin-left:20px;
+}
+label{
+    color: white;
+    
+}
+.row{
+    margin-bottom: 100px;
+    margin-left: 200px;
+}
